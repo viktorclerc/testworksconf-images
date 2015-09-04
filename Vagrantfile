@@ -1,5 +1,5 @@
 Vagrant.configure(2) do |config|
-  config.vm.box = "./base.box"
+  config.vm.box = "softEcon/base"
 
   config.vm.provider "virtualbox" do |vb|
   	# Display the VirtualBox GUI when booting the machine
@@ -13,5 +13,7 @@ Vagrant.configure(2) do |config|
   config.vm.provision 'shell' do |s|
     s.path = 'provision.sh'
   end
+
+  config.vm.provision "file", source: "./rf_demo_code", destination: "rf_demo_code"
 
 end
