@@ -1,5 +1,16 @@
+$script = <<SCRIPT
+echo I am provisioning...
+sudo apt-get update
+sudo apt-get install -y git
+sudo apt-get install -y python-pip
+sudo apt-get install -y python-wxgtk2.8
+sudo pip install robotframework
+sudo pip install robotframework-ride==1.5a1
+sudo pip install robotframework-selenium2library
+SCRIPT
+
 Vagrant.configure(2) do |config|
-  config.vm.box = "./trusty-server-cloudimg-amd64-vagrant-disk1.box"
+  config.vm.box = "./base.box"
 
   config.vm.provider "virtualbox" do |vb|
   	# Display the VirtualBox GUI when booting the machine
@@ -9,13 +20,6 @@ Vagrant.configure(2) do |config|
   	vb.cpus = 2
   end
 
-  config.vm.provision "shell", inline: <<-SHELL
-     sudo apt-get update
-     sudo apt-get install -y git
-     sudo apt-get install -y python-pip
-     sudo apt-get install -y python-wxgtk2.8
-     sudo pip install robotframework
-     sudo pip install robotframework-ride==1.5a1
-     sudo pip install robotframework-selenium2library
-  SHELL
+  config.vm.provision "shell", inline: $script
+
 end
