@@ -1,5 +1,5 @@
 Vagrant.configure(2) do |config|
-  config.vm.box = "box-cutter/ubuntu1404-desktop"
+  config.vm.box = "./trusty-server-cloudimg-amd64-vagrant-disk1.box"
 
   config.vm.provider "virtualbox" do |vb|
   	# Display the VirtualBox GUI when booting the machine
