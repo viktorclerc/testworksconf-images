@@ -1,5 +1,5 @@
 Vagrant.configure(2) do |config|
-  config.vm.box = "softEcon/base"
+  config.vm.box = "box-cutter/ubuntu1404-desktop"
 
   config.vm.provider "virtualbox" do |vb|
   	# Display the VirtualBox GUI when booting the machine
