@@ -9,8 +9,9 @@ sudo apt-get update
 sudo apt-get install -y git
 sudo apt-get install -y python-pip
 sudo apt-get install -y python-wxgtk2.8
+
 sudo pip install robotframework
-sudo pip install robotframework-ride==1.5a1
+sudo pip install robotframework-ride==1.5a2
 sudo pip install robotframework-selenium2library
 sudo pip install WebTest
 sudo pip install livetest
