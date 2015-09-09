@@ -1,0 +1,3 @@
+*** Settings ***
+Resource          ${CURDIR}/01_Generic_functions.txt
+Resource          ${CURDIR}/First_user_keyword_library.txt

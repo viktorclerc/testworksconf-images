@@ -1,0 +1,6 @@
+*** Settings ***
+Resource          01_Library_imports_file.txt
+Resource          Functions/00_Master_functions_file.txt
+Resource          Global_variables/00_Master_variables_file.txt
+Resource          Object_map/00_Master_objects_file.txt
+Resource          Wrappers/00_Master_wrappers_file.txt

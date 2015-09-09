@@ -1,0 +1,2 @@
+*** Settings ***
+Resource          ../00_Master_resource_file.txt

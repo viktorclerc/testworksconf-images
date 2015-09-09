@@ -1,0 +1,18 @@
+*** Settings ***
+Resource          ../Resources/00_Master_resource_file.txt
+
+*** Test Cases ***
+Open Amazon main page
+    #    Open the browser to amazon
+    Open browser    http://www.amazon.com    browser=ff
+    Maximize Browser Window
+    #    Set the search category combo
+    Wait Until Page Contains Element    ${cmb_Select category}    timeout=5
+    Select From List By Label    ${cmb_Select category}    Movies & TV
+    #    Enter a search string
+    Wait Until Page Contains Element    ${txt_Search field}
+    Input Text    ${txt_Search field}    The Doors
+    #    Click the search button
+    Click Element    ${btn_Search}
+    Sleep    5s
+    [Teardown]    Close Browser

@@ -1,0 +1,4 @@
+*** Variables ***
+${txt_Search field}    //input[@id='twotabsearchtextbox']
+${cmb_Select category}    //select[@title='Search in']
+${btn_Search}     //input[@value='Go']

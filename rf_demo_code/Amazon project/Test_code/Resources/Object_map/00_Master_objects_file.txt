@@ -1,0 +1,3 @@
+*** Settings ***
+Resource          ${CURDIR}/01_Generic_objects.txt
+Resource          ${CURDIR}/First_UImap.txt

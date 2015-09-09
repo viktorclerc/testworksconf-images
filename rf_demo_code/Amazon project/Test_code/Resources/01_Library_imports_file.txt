@@ -1,0 +1,14 @@
+*** Settings ***
+Library           Collections    # A test library providing keywords for handling lists and dictionaries.
+Library           DateTime    # A test library for creating and verifying date and time values as well as calculations between them.
+Library           HttpLibrary.HTTP    # A library for HTTP level testing using livetest tool internally (which, in turn uses the famous webtest library underneath).
+Library           OperatingSystem    # A test library providing keywords for various OS related tasks.
+Library           Process    # A test library for running processes.
+Library           RemoteSwingLibrary    # A library for testing and connecting to a java process and using SwingLibrary.
+Library           RequestsLibrary    # A library for HTTP level testing that uses the Requests HTTP client.
+Library           Screenshot    # A test library for taking screenshots on the machine where tests are run.
+Library           Selenium2Library    # A web testing library that leverages the Selenium 2 (WebDriver) libraries.
+Library           String    # A test library for string manipulation and verification.
+Library           SudsLibrary    # A test library for functional testing of SOAP-based web services based on Suds, a dynamic SOAP 1.1 client.
+Library           Telnet    # A test library providing communication over Telnet connections.
+Library           XML    # A test library for verifying and modifying XML documents.

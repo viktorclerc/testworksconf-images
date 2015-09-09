@@ -1,0 +1,6 @@
+*** Settings ***
+Resource          ../Resources/00_Master_resource_file.txt
+
+*** Test Cases ***
+
+*** Keywords ***
