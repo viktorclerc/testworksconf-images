@@ -1,5 +1,5 @@
 # robot-framework-workshop
-Workshop material for open kitchen / TestWorksConf
+Workshop material for Robot Framework Open Kitchen / TestWorksConf session
 
 Prerequisites
 
