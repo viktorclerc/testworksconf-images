@@ -9,11 +9,20 @@ Vagrant.configure(2) do |config|
   	vb.cpus = 2
   end
 
-  # provision
+  # provision generics
   config.vm.provision 'shell' do |s|
-    s.path = 'provision.sh'
+    s.path = 'provision-generics.sh'
   end
 
-  config.vm.provision "file", source: "./rf_demo_code", destination: "rf_demo_code"
+  # provision Robot Framework
+#  config.vm.provision 'shell' do |s|
+#    s.path = 'provision-rf.sh'
+#  end
+
+  # provision IntelliJ CE and JDK
+  config.vm.provision 'shell' do |s|
+    s.path = 'provision-JDK-IDEA.sh'
+  end
+
 
 end

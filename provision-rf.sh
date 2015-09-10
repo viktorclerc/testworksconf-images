@@ -6,7 +6,6 @@ PYTHON_VERSION=2.7.10
 
 echo I am provisioning...
 sudo apt-get update
-sudo apt-get install -y git
 sudo apt-get install -y python-pip
 sudo apt-get install -y python-wxgtk2.8
 
