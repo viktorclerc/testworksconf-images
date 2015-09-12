@@ -1,23 +1,32 @@
 #!/usr/bin/env bash
 set -e
 
-echo I am provisioning JDK and IDEA...
-sudo add-apt-repository ppa:webupd8team/java
-sudo apt-get update
+echo I am provisioning IDEA...
 
-echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections &&
-sudo apt-get -y install oracle-java7-installer
-sudo update-java-alternatives -s java-7-oracle &&
-
-java -version
-
-# install
-sudo update-java-alternatives -s java-7-oracle
-sudo echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
-
+# download and unpack IntelliJ IDEA
 wget -O /tmp/intellij.tar.gz http://download.jetbrains.com/idea/ideaIC-14.1.4.tar.gz
-tar zxvf /tmp/intellij.tar.gz &&
-cd idea-IC-141.1532.4/bin &&
+tar -zxf /tmp/intellij.tar.gz -C /home/vagrant &&
+cd /home/vagrant/idea-IC-141.1532.4/bin
+
+# create some kind of dekstop entry
+
+echo "[Desktop Entry]
+Name=IntelliJ IDEA
+Type=Application
+Exec=/home/vagrant/idea-IC-141.1532.4/bin/idea.sh
+Terminal=false
+Icon=idea
+Comment=Integrated Development Environment
+NoDisplay=false
+Categories=Development;IDE;
+Name[en]=IntelliJ IDEA" > /home/vagrant/idea.desktop
+
+sudo desktop-file-install /home/vagrant/idea.desktop
+
+# clone Arjan Molenaar's repository
+
+# cd /home/vagrant/repoBase
+# git clone
 
 # starting the IDE yields a GUI error
 # ./idea.sh
