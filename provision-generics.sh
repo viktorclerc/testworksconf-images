@@ -45,14 +45,16 @@ echo "Maven is on version `mvn -v`"
 sudo apt-get -y install chromium-browser
 
 # install chromedriver
+mkdir -p /home/vagrant/chromedriver
+
 wget -N http://chromedriver.storage.googleapis.com/2.10/chromedriver_linux64.zip -P /home/vagrant/chromedriver
-unzip /home/vagrant/chromedriver/chromedriver_linux64.zip
+unzip /home/vagrant/chromedriver/chromedriver_linux64.zip -d /home/vagrant/chromedriver
 chmod +x /home/vagrant/chromedriver/chromedriver
 sudo mv -f /home/vagrant/chromedriver/chromedriver /usr/local/share/chromedriver
-sudo ln -s /user/local/share/chromedriver /usr/local/bin/chromedriver
-sudo ln -s /user/local/share/chromedriver /usr/bin/chromedriver
+sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
+sudo ln -s /usr/local/share/chromedriver /usr/bin/chromedriver
 
-# install npm
+# install npm -- Guillaume, Edze, Marc
 sudo apt-add-repository ppa:chris-lea/node.js
 sudo apt-get update
 sudo apt-get -y install nodejs
@@ -61,3 +63,4 @@ sudo apt-get -y install nodejs
 
 # create base directory into which all github repositories will be cloned
 mkdir /home/vagrant/repoBase
+sudo chown -R vagrant:vagrant /home/vagrant/repoBase
