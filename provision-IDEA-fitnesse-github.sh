@@ -24,9 +24,9 @@ Name[en]=IntelliJ IDEA" > /home/vagrant/idea.desktop
 sudo desktop-file-install /home/vagrant/idea.desktop
 
 # clone Arjan Molenaar's repository
-
-# cd /home/vagrant/repoBase
-# git clone
+cd /home/vagrant/repoBase
+git clone https://github.com/amolenaar/beefing-up-fitnesse.git /home/vagrant/repoBase/beefing-up-fitnesse
+sudo chown -R vagrant:vagrant /home/vagrant/repoBase/beefing-up-fitnesse
 
 # starting the IDE yields a GUI error
 # ./idea.sh
