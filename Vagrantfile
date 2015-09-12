@@ -19,9 +19,16 @@ Vagrant.configure(2) do |config|
 #    s.path = 'provision-rf.sh'
 #  end
 
+  # Beefing up FitNesse
   # provision IntelliJ CE and JDK
   config.vm.provision 'shell' do |s|
-    s.path = 'provision-JDK-IDEA.sh'
+    s.path = 'provision-IDEA.sh'
+  end
+
+  # Galen
+  # provision github repository
+  config.vm.provision 'shell' do |s|
+    s.path = 'provision-galen-github.sh'
   end
 
 
