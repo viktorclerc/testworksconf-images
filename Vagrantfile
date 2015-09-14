@@ -15,9 +15,9 @@ Vagrant.configure(2) do |config|
   end
 
   # provision Robot Framework
-#  config.vm.provision 'shell' do |s|
-#    s.path = 'provision-rf.sh'
-#  end
+  config.vm.provision 'shell' do |s|
+    s.path = 'provision-rf.sh'
+  end
 
   # Beefing up FitNesse
   # provision IntelliJ CE and JDK
