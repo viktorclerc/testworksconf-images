@@ -63,9 +63,10 @@ sudo apt-get -y install nodejs
 
 # create and set path to include own 'bin' directory
 mkdir -p /home/vagrant/bin
-chown -R vagrant:vagrant /home/vagrant/bin
 export PATH=$PATH:/home/vagrant/bin
 
 # create base directory into which all github repositories will be cloned
 mkdir /home/vagrant/repoBase
+
 sudo chown -R vagrant:vagrant /home/vagrant/repoBase
+sudo chown -R vagrant:vagrant /home/vagrant/bin
