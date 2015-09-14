@@ -8,26 +8,26 @@ sudo apt-get install -y git
 
 # install JDK as it was meant to be - from scratch
 
-
 mkdir /home/vagrant/java
 cd /home/vagrant/java
-curl -L --cookie "oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/7u65-b17/jdk-7u65-linux-x64.tar.gz -o jdk-7-linux-x64.tar.gz
-tar -zxf jdk-7-linux-x64.tar.gz
+curl -L --cookie "oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u60-b27/jdk-8u60-linux-x64.tar.gz -o jdk-8-linux-x64.tar.gz
+
+tar -zxf jdk-8-linux-x64.tar.gz
 
 sudo mkdir -p /usr/lib/jvm
-sudo mv ./jdk1.7.* /usr/lib/jvm/
+sudo mv ./jdk1.8.* /usr/lib/jvm/
 
 # register Java
-sudo update-alternatives --install "/usr/bin/java" "java" "/usr/lib/jvm/jdk1.7.0_65/bin/java" 1
-sudo update-alternatives --install "/usr/bin/javac" "javac" "/usr/lib/jvm/jdk1.7.0_65/bin/javac" 1
-sudo update-alternatives --install "/usr/bin/javaws" "javaws" "/usr/lib/jvm/jdk1.7.0_65/bin/javaws" 1
+sudo update-alternatives --install "/usr/bin/java" "java" "/usr/lib/jvm/jdk1.8.0_60/bin/java" 1
+sudo update-alternatives --install "/usr/bin/javac" "javac" "/usr/lib/jvm/jdk1.8.0_60/bin/javac" 1
+sudo update-alternatives --install "/usr/bin/javaws" "javaws" "/usr/lib/jvm/jdk1.8.0_60/bin/javaws" 1
 
 sudo chmod a+x /usr/bin/java 
 sudo chmod a+x /usr/bin/javac 
 sudo chmod a+x /usr/bin/javaws
-sudo chown -R root:root /usr/lib/jvm/jdk1.7.0_65
+sudo chown -R root:root /usr/lib/jvm/jdk1.8.0_60
 
-export JAVA_HOME=/usr/lib/jvm/jdk1.7.0_65
+export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_60
 
 java -version
 
@@ -60,6 +60,11 @@ sudo apt-get update
 sudo apt-get -y install nodejs
 
 # install bower gulb -- Edze and Marc
+
+# create and set path to include own 'bin' directory
+mkdir -p /home/vagrant/bin
+chown -R vagrant:vagrant /home/vagrant/bin
+export PATH=$PATH:/home/vagrant/bin
 
 # create base directory into which all github repositories will be cloned
 mkdir /home/vagrant/repoBase
