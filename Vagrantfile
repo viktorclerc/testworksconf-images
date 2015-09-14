@@ -9,7 +9,7 @@ Vagrant.configure(2) do |config|
   	vb.cpus = 2
   end
 
-  # provision generics
+  # provision generics: git, npm, chromedriver, etc
   config.vm.provision 'shell' do |s|
     s.path = 'provision-generics.sh'
   end
@@ -22,14 +22,24 @@ Vagrant.configure(2) do |config|
   # Beefing up FitNesse
   # provision IntelliJ CE and JDK
   config.vm.provision 'shell' do |s|
-    s.path = 'provision-IDEA.sh'
+    s.path = 'provision-IDEA-fitnesse-github.sh'
   end
 
   # Galen
-  # provision github repository
   config.vm.provision 'shell' do |s|
     s.path = 'provision-galen-github.sh'
   end
+
+  # Gatling
+  config.vm.provision 'shell' do |s|
+    s.path = 'provision-sbt-gatling-github.sh'
+  end
+
+  # Mox and the rest
+  config.vm.provision 'shell' do |s|
+    s.path = 'provision-mox.sh'
+  end
+
 
 
 end
