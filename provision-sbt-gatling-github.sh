@@ -12,4 +12,4 @@ sudo chown -R vagrant:vagrant /home/vagrant/repoBase/gatling-sbt-plugin-demo
 
 # run sbt to download all kinds of stuff
 cd /home/vagrant/repoBase/gatling-sbt-plugin-demo
-sbt
+/home/vagrant/bin/sbt
